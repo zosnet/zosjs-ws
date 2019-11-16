@@ -1,0 +1,125 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "zosjs-ws@^1.1.122",
+        "scope": null,
+        "escapedName": "zosjs-ws",
+        "name": "zosjs-ws",
+        "rawSpec": "^1.1.122",
+        "spec": ">=1.1.122 <2.0.0",
+        "type": "range"
+      },
+      "/home/adminuser/zos/zos-ui/node_modules/zosjs"
+    ]
+  ],
+  "_from": "zosjs-ws@>=1.1.122 <2.0.0",
+  "_id": "zosjs-ws@1.1.122",
+  "_inCache": true,
+  "_location": "/zosjs-ws",
+  "_nodeVersion": "7.9.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/zosjs-ws_1.0.1_1518446323072_0.08127929392631206"
+  },
+  "_npmUser": {
+    "name": "svk31",
+    "email": "zosblocks@gmail.com"
+  },
+  "_npmVersion": "4.2.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "zosjs-ws@^1.1.122",
+    "scope": null,
+    "escapedName": "zosjs-ws",
+    "name": "zosjs-ws",
+    "rawSpec": "^1.1.122",
+    "spec": ">=1.1.122 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/zosjs"
+  ],
+  "_resolved": "https://registry.npmjs.org/zosjs-ws/-/zosjs-ws-1.1.122.tgz",
+  "_shasum": "cabb89f4cdd6a3c713bdb7f72370cad98d69d58c",
+  "_shrinkwrap": null,
+  "_spec": "zosjs-ws@^1.1.122",
+  "_where": "/home/adminuser/zos/zos-ui/node_modules/zosjs",
+  "author": {
+    "name": "eric",
+    "email": "eric@zos.io",
+    "url": "https://www.zos.io"
+  },
+  "browser": {
+    "ws": false
+  },
+  "bugs": {
+    "url": "https://github.com/zos/zosjs-ws/issues"
+  },
+  "contributors": [
+    {
+      "name": "James Calfee",
+      "email": "james@jcalfee.info",
+      "url": "https://github.com/jcalfee/"
+    }
+  ],
+  "dependencies": {
+    "ReconnectingWebSocket": "git+https://github.com/bitshares/reconnecting-websocket.git",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "ws": "^4.0.0"
+  },
+  "description": "Pure JavaScript Zos/Graphene websocket interface for node.js and browsers.",
+  "devDependencies": {
+    "assert": "^1.3.0",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "browserify": "^13.0.1",    
+    "mocha": "^2.3.4",
+    "uglify-js": "^3.1.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "cabb89f4cdd6a3c713bdb7f72370cad98d69d58c",
+    "tarball": "https://registry.npmjs.org/zosjs-ws/-/zosjs-ws-1.1.122.tgz",
+    "fileCount": 18,
+    "unpackedSize": 60434
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "gitHead": "0dff4f15b557d69244ffeac66190051db8b08b84",
+  "homepage": "https://github.com/zos/zosjs-ws#readme",
+  "jsnext:main": "es/index.js",
+  "license": "BSD-2-Clause-FreeBSD",
+  "main": "cjs/index.js",
+  "maintainers": [
+    {
+      "name": "svk31",
+      "email": "zosblocks@gmail.com"
+    }
+  ],
+  "name": "zosjs-ws",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zos/zosjs-ws.git"
+  },
+  "scripts": {
+    "browserify": "NODE_ENV=production browserify cjs/src/ApiInstances.js --standalone bitshares_ws -o build/zosjs-ws.js -d",
+    "build": "BABEL_ENV=cjs babel lib --out-dir cjs",
+    "build-es": "BABEL_ENV=es babel ./lib -d es",
+    "clean": "rm -rf ./build/* & rm -rf ./es/*",
+    "postbrowserify": "NODE_ENV=production uglifyjs --compress --mangle --sequences --drop_console --mangle-props --screw-ie8 --output build/zosjs-ws.min.js -- build/zosjs-ws.js",
+    "postbuild": "npm run browserify && npm run build-es",
+    "prebuild": "npm run clean",
+    "prepublish_2": "npm run build",
+    "test": "BABEL_ENV=test mocha --compilers js:babel-core/register --recursive",
+    "test:manager": "BABEL_ENV=test mocha --compilers js:babel-core/register ./test/Manager --watch",
+    "test:watch": "npm test -- --watch",
+    "example:test": "babel-node cjs/example/test"
+  },
+  "version": "1.1.122"
+}
